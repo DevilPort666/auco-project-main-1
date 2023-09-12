@@ -7,6 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'line-clamp-2': {
+              display: '-webkit-box',
+              '-webkit-box-orient': 'vertical',
+              overflow: 'hidden',
+              '-webkit-line-clamp': '2',
+            },
+          },
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
