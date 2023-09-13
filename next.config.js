@@ -4,6 +4,7 @@ const nextConfig = {
       domains: ['media.licdn.com', 'image.tmdb.org'],
     },
     output: 'export',
+    basePath: '/auco-project-main',
 }
 
 module.exports = nextConfig
