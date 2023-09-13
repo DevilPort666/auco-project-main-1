@@ -1,8 +1,13 @@
 import './globals.css'
+import Header from './components/Header';
+
 const AppLayout = ({children}) => {
     return(
         <html>
-            <body>{children}</body>
+            <body>
+                <Header/>
+                <main>{children}</main>
+            </body>
         </html>
     )
 }

@@ -4,7 +4,7 @@ import { getPostDetails } from '@/utils/getPosts';
 async function PostDetail({params}) {
   const {post, comments} = await getPostDetails(params.id);
   return (
-    <div className="container mx-auto p-6 font-serif flex justify-center items-center min-h-screen">
+    <div className="container mx-auto p-6 font-serif flex justify-center items-center min-h-screen user-select-none">
       <div className="card-gradient bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
         <h1 className="text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
         <p className="mb-8 text-lg leading-relaxed">{post.body}</p>
