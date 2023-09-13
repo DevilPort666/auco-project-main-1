@@ -1,5 +1,6 @@
 import Link from "next/link"
 import MovieItems from "../components/MovieItems"
+import { FetchMovies } from "@/utils/getMovies"
 
 const Api2 = async() => {
     return(
@@ -18,3 +19,10 @@ const Api2 = async() => {
 
 export default Api2
 
+export async function getStaticPaths() {
+    const movies = await FetchMovies();
+    const paths = movies.map((movie) => ({
+      params: { id: movie.id.toString() },
+    }));
+    return { paths, fallback: false };
+  }

@@ -16,3 +16,11 @@ const Api1 = async() => {
 }
 
 export default Api1
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const paths = posts.map((post) => ({
+    params: { id: post.id.toString() },
+  }));
+  return { paths, fallback: false };
+}
