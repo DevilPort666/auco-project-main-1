@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const MainItems = () => {
     return(
-        <div className="h-screen h-[93vh] flex flex-col bg-gray-100 py-4">
+        <div className="h-screen h-[92.9vh] flex flex-col bg-gray-100 py-4">
             <div className="flex flex-col items-center justify-center flex-grow">
                 <div className="flex mx-auto max-w-screen-xl space-x-8 p-4">
                     <div
