@@ -1,11 +1,10 @@
-import axios from "axios";
-
 export const getPosts = async() => {
     try {
-        const response = await axios.get(
+        const response = await fetch(
           "https://jsonplaceholder.typicode.com/posts"
         );
-        return response.data;
+        const data = await response.json()
+        return data;
       } catch (error) {
         console.error(error);
         return [];
@@ -15,13 +14,17 @@ export const getPosts = async() => {
 export const getPostDetails = async(id) => {
     try{
         const [postRes, commentsRes] = await Promise.all([
-            axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`),
-            axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`),
+            fetch(`https://jsonplaceholder.typicode.com/posts/${id}`),
+            fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`),
           ]);
-        
+
+        const [postResdata, commentsResdata] = await Promise.all([
+            postRes.json(),
+            commentsRes.json(),
+        ]);
         return {
-              post: postRes.data,
-              comments: commentsRes.data,
+              post: postResdata,
+              comments: commentsResdata,
         };
     }
     catch(error){
