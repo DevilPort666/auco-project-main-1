@@ -19,7 +19,7 @@ export const FetchMovieDetails = async (id) => {
       `https://api.themoviedb.org/3/tv/${id}?api_key=${key}`
     );
     const data = await response.json();
-    return data.results;
+    return data;
   } catch (error) {
     console.error(error);
     return null;
