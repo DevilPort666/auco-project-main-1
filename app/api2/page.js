@@ -1,5 +1,5 @@
 import Link from "next/link"
-import getMovies from "@/utils/getMovies"
+import MovieItems from "../components/MovieItems"
 
 const Api2 = async() => {
     return(
@@ -11,6 +11,7 @@ const Api2 = async() => {
                     </svg>
                 </button>
             </Link>
+            <MovieItems />
         </>
     )
 }
