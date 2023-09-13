@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-    domains: ['media.licdn.com', 'image.tmdb.org'],
-  },
+      domains: ['media.licdn.com', 'image.tmdb.org'],
+    },
+    output: 'export',
 }
 
 module.exports = nextConfig
